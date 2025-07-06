@@ -94,12 +94,12 @@ export theme_hw_board=${prefix}/themes/slack/hwinfo/board.txt;
 
 export theme=${theme_std};
 
-search --set=user -f -q ${prefix}/config;
+search --set=user -f -q /EFI/grubfm/config;
 export user;
 if [ -n "${user}" ];
 then
   grubfm_set -u "${user}";
-  source (${user})/${prefix}/config;
+  source (${user})/EFI/grubfm/config;
 fi;
 
 export grubfm_lang="${lang}";
